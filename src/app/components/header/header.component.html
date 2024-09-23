@@ -1,0 +1,60 @@
+<header *ngIf="!secondHeader" class="sticky top-0 hidden w-full md:block ">
+  <nav class="py-3 bg-transparent border-gray-200 dark:bg-gray-900">
+      <div class="flex flex-wrap items-center max-w-screen-xl gap-40 px-4 mx-auto">
+          <a href="#" class="flex items-center bg-black rounded-full">
+              <img src="logo1.png" class="invert h-28" alt="Pomiel Logo" />
+          </a>
+
+          <div class="flex items-center justify-between order-1 w-auto">
+              <ul class="flex flex-row mt-0 space-x-8 font-medium">
+                  <li>
+                      <a [routerLink]="['/home']" [routerLinkActive]="['active']" class="block py-2 pl-3 pr-4 [&.active]:text-white rounded text-[#3f5d5a] lg:p-0" aria-current="page">Home</a>
+                  </li>
+
+                  <li>
+                    <a [routerLink]="['/about-us']" [routerLinkActive]="['active']" class="block py-2 pl-3 pr-4 [&.active]:text-white rounded text-[#3f5d5a] lg:p-0" aria-current="page">About us</a>
+                </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+
+<header *ngIf="secondHeader" class="sticky top-0 left-0 right-0 z-50 header">
+  <nav class="py-3 bg-transparent border-gray-200 dark:bg-gray-900">
+      <div class="flex flex-wrap items-center justify-between max-w-screen-xl gap-40 px-4 mx-auto">
+          <a href="#" class="flex items-center bg-black rounded-full">
+              <img src="logo1.png" class="invert h-28 " alt="Pomiel Logo" />
+          </a>
+
+          <div class="flex">
+            <input type="checkbox" id="drawer-toggle" class="sr-only peer">
+            <label for="drawer-toggle" class="inline-block p-4 transition-all duration-500 bg-black rounded-lg cursor-pointer peer-checked:z-[100]">
+                <div class="w-6 h-1 mb-1 bg-white rounded-lg"></div>
+
+                <div class="w-6 h-1 mb-1 bg-white rounded-lg"></div>
+
+                <div class="w-6 h-1 bg-white rounded-lg"></div>
+            </label>
+
+            <div class="fixed top-0 right-0 z-20 w-full h-full transition-all duration-500 transform translate-x-full bg-white shadow-lg peer-checked:translate-x-0">
+              <div class="flex justify-center">
+                <img src="logo1.png" class="h-20" alt="logo">
+              </div>
+
+              <div class="px-6 py-4">
+                <ul class="flex flex-col gap-8 mt-8 font-medium">
+                  <li>
+                      <a [routerLink]="['/home']" (click)="handleClick()" [routerLinkActive]="['active']" class="block py-2 pr-4 [&.active]:text-black rounded text-[#3f5d5a] lg:p-0" aria-current="page">Home</a>
+                  </li>
+
+                  <li>
+                    <a [routerLink]="['/about-us']" (click)="handleClick()" [routerLinkActive]="['active']" class="block py-2 pr-4 [&.active]:text-black rounded text-[#3f5d5a] lg:p-0" aria-current="page">About us</a>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+  </nav>
+</header>

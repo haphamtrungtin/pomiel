@@ -1,0 +1,97 @@
+<section class="h-screen bg-black mt-[-140px]">
+  <div class="flex items-center justify-center h-full p-10">
+      <div class="container flex flex-col items-center justify-center h-full m-auto text-white">
+        <h1 class="leading-[100%] text-[64px] md:text-[142px] mb-10 xl:text-[162px] font-bold text-center uppercase">Pomiel Company</h1>
+
+      <ul class="text-center [&>li]:mb-4 [&>li]:md:text-[18px] font-light ">
+        <li>Tạo nên một thế giới với nhiều thử thách hơn
+        </li>
+
+        <li>Hướng về 1 thế giới với nhiều kết nối hơn
+        </li>
+
+        <li>Chúng tôi mong chờ những nỗ lực, thử thách mới để khám phá và phát triển những giá trị tiềm ẩn trên thế giới.
+        </li>
+
+        <li>Chúng tôi đang chứng minh giá trị của thử thách này và truyền cảm hứng để biến giấc mơ thành hiện thực.
+        </li>
+      </ul>
+      </div>
+  </div>
+</section>
+
+<section class="relative flex flex-col items-center justify-center p-10 bg-white md:py-20 md:px-36">
+  <h3 class="text-[32px] sm:text-[38px] md:text-[34px] lg:text-[36px] font-bold tracking-normal self-start">
+    Những dịch vụ Pomiel đang triển khai
+  </h3>
+
+  <div class="flex flex-col self-start w-full gap-10 mt-10 md:gap-20 lg:flex-row">
+    <img src="/logo1.png" alt="logo" class="w-[200px] h-[200px] object-cover">
+
+    <div class="w-full [&>p]:text-[22px] font-semibold flex-1 bg-[#e0e0e0] rounded-xl p-8">
+      <div class="flex flex-col justify-center h-full">
+        <p>Pomiel là một công ty khởi nghiệp được thành lập vào năm 2017, bao gồm AdTech / AppTech / Commerce / Community v.v.
+        </p>
+
+        <br>
+
+        <p>Chúng tôi đang tạo ra những trải nghiệm mới chưa từng có trong nhiều lĩnh vực khác nhau.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative flex flex-col items-center justify-center">
+  <div class="w-full flex-col flex items-center justify-center h-full bg-[url('/background-client.png')] md:p-36 p-14">
+    <h2 class="text-[20px] mb-10 sm:text-[28px] md:text-[30px] lg:text-[32px] text-white text-center font-light">Đối tác của Pomiel
+    </h2>
+
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+      <div *ngFor="let brand of brands" class="w-full h-40 p-9 cursor-pointer flex justify-center items-center bg-[#101717] grayscale [&>div]:opacity-50 [&>div]:hover:opacity-100 hover:grayscale-0">
+        <div class="flex items-center justify-center transition-all duration-500">
+          <img [src]="brand.image" [alt]="brand.image + 'alt'" class="object-contain w-full h-28">
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full h-full mt-10 p-4 md:p-20 bg-[url('/background-main-contact.png')]">
+      <div class="flex flex-col items-center gap-10 lg:flex-row">
+        <img src="/logo1.png" alt="logo" class="w-[200px] invert h-[200px] object-cover">
+
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="flex-1 w-full p-8 bg-white rounded-xl">
+          <div class="mb-4">
+            <label for="email" class="block font-medium text-gray-700">Email:</label>
+
+            <input type="email" id="email" name="email" [(ngModel)]="email" required
+                  class="block bg-[#f5f8fa] border border-[#cbd6e2] w-full mt-1 focus:outline-none rounded-md shadow-sm min-h-[40px] py-2 px-4">
+          </div>
+
+          <div class="mb-4">
+            <label for="lastName" class="block font-medium text-gray-700">Họ:</label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required
+                  class="block bg-[#f5f8fa] border border-[#cbd6e2] w-full mt-1 focus:outline-none rounded-md shadow-sm min-h-[40px] py-2 px-4">
+          </div>
+
+          <div class="mb-4">
+            <label for="firstName" class="block font-medium text-gray-700">Tên:</label>
+            <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required
+                  class="block bg-[#f5f8fa] border border-[#cbd6e2] w-full mt-1 focus:outline-none rounded-md shadow-sm min-h-[40px] py-2 px-4">
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="block font-medium text-gray-700">Lời nhắn:</label>
+            <textarea id="message" name="message" [(ngModel)]="message"
+                      class="block bg-[#f5f8fa] border border-[#cbd6e2] w-full mt-1 focus:outline-none rounded-md shadow-sm h-60 py-2 px-4"></textarea>
+          </div>
+
+          <button type="submit"
+                  [disabled]="!contactForm.valid"
+                  class="px-8 py-3 font-bold  text-white bg-[#e04b53] rounded disabled:opacity-50">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

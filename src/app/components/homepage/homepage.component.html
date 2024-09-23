@@ -1,0 +1,117 @@
+<section class="h-screen mt-[-140px]">
+  <div class="">
+      <div class=" h-screen inset-0 w-full bg-[left_calc(50%)_top_calc(50%)] bg-no-repeat bg-cover bg-[url('/background.png')] z-[-1]">
+        <div class="container flex flex-col items-center justify-center h-full m-auto text-white">
+          <h1 class=" leading-[100%] text-[64px] md:text-[142px] xl:text-[162px] font-bold text-center uppercase">Pomiel</h1>
+
+          <h2 class=" leading-[100%] text-[32px] md:text-[112px] xl:text-[132px] tracking-[25px] font-extralight text-center uppercase">Company</h2>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="bg-[#101717] relative w-full h-full md:p-36 p-10 flex justify-center items-center">
+  <div class="flex flex-col w-full h-auto gap-2 p-10 bg-white rounded-md">
+    <div class="mb-14">
+      <h3 class="text-[24px] md:text-[44px] lg:text-[46px] font-bold tracking-normal text-center">Pomiel dành cho nhà quảng cáo
+      </h3>
+
+      <p class="text-[16px] md:text-[30px] lg:text-[32px] tracking-normal text-center">
+        Giải pháp marketing vì sự thành công trong kinh doanh của nhà quảng cáo!<br>
+        Tối đa hóa dòng vốn với nền tảng Pomiel!<br>
+        Kết nối trực tiếp với các phương tiện truyền thông liên kết</p>
+    </div>
+
+    <div>
+      <h3 class="text-[24px] md:text-[44px] lg:text-[46px] font-bold tracking-normal text-center">Vì sự thành công trong kinh doanh của đối tác
+      </h3>
+
+      <p class="text-[16px] md:text-[30px] lg:text-[32px] tracking-normal text-center">
+        Giải pháp sinh lời!<br>
+        Bạn muốn tối đa hóa lợi nhuận thông qua các quảng cáo đa dạng<br>
+        Hãy bắt đầu với Pomiel ngay bây giờ!</p>
+    </div>
+  </div>
+</section>
+
+<section class="relative flex flex-col items-center justify-center p-10 bg-white md:py-20 md:px-36">
+  <div class="flex justify-center items-center w-fit h-[400px] bg-[left_calc(50%)_top_calc(50%)] bg-no-repeat bg-[url('/background-white.png')]">
+    <h3 class="text-[20px] md:text-[44px] lg:text-[46px] font-bold tracking-normal text-center">
+      Các dịch vụ của Pomiel <br>(giải pháp marketing đa dạng)
+    </h3>
+  </div>
+
+  <div class="w-full">
+    <h3 class="text-[20px] mb-10 sm:text-[28px] md:text-[30px] lg:text-[32px] tracking-normal text-center">Những hình thức đã và đang thực hiện tại Hàn Quốc</h3>
+
+    <div class="grid items-center justify-between w-full grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-4">
+      <div onKeyUp="" *ngFor="let item of items1; let i = index" class="rounded-full w-[200px] xl:w-[250px] h-[200px] xl:h-[250px] px-8 bg-black flex justify-center text-center items-center text-white cursor-pointer mx-auto" (click)="handlePopup1(i)">
+        <ng-container *ngIf="activeItemIndex1 === i; else showDesc">
+          <div  @fadeInOut class="absolute w-80 h-80">
+            <img [src]="item.image" alt="{{ item.desc }}" class="object-cover w-full h-full" />
+          </div>
+        </ng-container>
+
+        <ng-template #showDesc>
+          <p [innerHTML]="item?.desc"></p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex mt-10 justify-center items-center w-fit h-[400px] bg-[left_calc(50%)_top_calc(50%)] bg-no-repeat bg-[url('/background-white.png')]">
+    <h3 class="text-[20px] mb-10 sm:text-[28px] md:text-[30px] lg:text-[32px] font-bold tracking-normal text-center">
+      Những hình thức sẽ triển khai tại Việt Nam:<br> SHOPPE, LAZADA, TIKI…
+    </h3>
+  </div>
+
+  <div class="w-full">
+    <div class="grid items-center justify-between w-full grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
+      <div onKeyUp="" *ngFor="let item of items2; let i = index" class="rounded-full w-[200px] xl:w-[250px] h-[200px] xl:h-[250px] px-8 bg-black flex justify-center text-center items-center text-white cursor-pointer mx-auto" (click)="handlePopup2(i)">
+        <ng-container *ngIf="activeItemIndex2 === i; else showDesc">
+          <div  @fadeInOut class="absolute w-80 h-80">
+            <img [src]="item.image" alt="{{ item.desc }}" class="object-cover w-full h-full" />
+          </div>
+        </ng-container>
+
+        <ng-template #showDesc>
+          <p [innerHTML]="item?.desc"></p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative flex flex-col items-center justify-center p-10 bg-white md:py-20 md:px-36">
+  <div class="flex mt-10 justify-center items-center w-fit h-[200px] bg-[left_calc(50%)_top_calc(50%)] bg-no-repeat bg-[url('/background-white.png')]">
+    <h3 class="text-[20px] mb-10 sm:text-[28px] md:text-[30px] lg:text-[32px] font-bold tracking-normal text-center">
+      Giải quyết tất cả trong một lần với Pomiel
+    </h3>
+  </div>
+
+  <div class="flex items-start justify-between mb-10">
+    <h3 class="text-[16px] w-1/3 sm:text-[24px] md:text-[26px] tracking-normal text-center">Nhà quảng cáo:<br> Quy trình đơn giản, gia tăng thứ hạng trên công cụ tìm kiếm ngay sau khi đăng ký / đảm bảo cho khách hàng</h3>
+
+    <div class="w-[1px] h-32 bg-black"></div>
+
+    <h3 class="text-[16px] w-1/3 sm:text-[24px]  md:text-[26px] tracking-normal text-center">Đối tác:<br> Xây dựng dễ dàng, kích hoạt APP tối đa hóa lợi nhuận
+    </h3>
+  </div>
+
+  <img src="08.png" class="w-[50rem] h-full" alt="">
+</section>
+
+<section class="relative flex flex-col items-center justify-center">
+  <div class="w-full h-full bg-[url('/background-client.png')] md:p-36 p-10">
+    <h2 class="text-[20px] mb-10 sm:text-[28px] md:text-[30px] lg:text-[32px] text-white text-center font-light">Đối tác của Pomiel
+    </h2>
+
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+      <div *ngFor="let brand of brands" class="w-full h-40 p-9 cursor-pointer flex justify-center items-center bg-[#101717] grayscale [&>div]:opacity-50 [&>div]:hover:opacity-100 hover:grayscale-0">
+        <div class="flex items-center justify-center transition-all duration-500">
+          <img [src]="brand.image" [alt]="brand.image + 'alt'" class="object-contain w-full h-28">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
