@@ -31,7 +31,7 @@ export class IntroduceComponent {
   message: string = '';
 
   onSubmit() {
-    const mailtoLink = `mailto:dongsug503@gmail.com?subject=Contact%20Form%20Submission&body=Email:%20${encodeURIComponent(this.email)}%0D%0A%0D%0AHọ:%20${encodeURIComponent(this.lastName)}%0D%0A%0D%0ATên:%20${encodeURIComponent(this.firstName)}%0D%0A%0D%0ALời%20nhắn:%20${encodeURIComponent(this.message)}`;
+    const mailtoLink = `mailto:dongsug503@gmail.com,pomielvietnam@gmail.com?subject=Contact%20Form%20Submission&body=Email:%20${encodeURIComponent(this.email)}%0D%0A%0D%0AHọ:%20${encodeURIComponent(this.lastName)}%0D%0A%0D%0ATên:%20${encodeURIComponent(this.firstName)}%0D%0A%0D%0ALời%20nhắn:%20${encodeURIComponent(this.message)}`;
 
     window.location.href = mailtoLink;
   }

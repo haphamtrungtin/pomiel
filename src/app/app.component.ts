@@ -15,18 +15,18 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'pomiel';
   private lenis: Lenis;
-  isLoading = true;
+  isLoading = false;
   progressWidth = '0%'; // Start at 0%
   currentProgress = 0; // Current progress in percentage
 
   ngOnInit(): void {
-    this.animateProgress();
+    // this.animateProgress();
 
-    setInterval(() => {
+    // setInterval(() => {
 
-      this.isLoading = false
+    //   this.isLoading = false
 
-    }, 2200)
+    // }, 2200)
   }
 
   animateProgress() {

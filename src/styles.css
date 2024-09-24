@@ -13,3 +13,17 @@ body {
   font-size: 14px;
 }
 
+@keyframes fadeInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(300px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  animation: fadeInRight 0.6s ease-in-out forwards;
+}
