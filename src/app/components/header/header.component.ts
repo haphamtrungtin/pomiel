@@ -33,6 +33,7 @@ export class HeaderComponent {
   }
 
   handleClick(): void{
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const toggleInput = document.getElementById('drawer-toggle') as HTMLInputElement;
 
     if (toggleInput && toggleInput.type === 'checkbox') {
