@@ -84,7 +84,6 @@ export class HomepageComponent {
   ngOnInit(): void {
     this.startAutoActivation1();
     this.startAutoActivation2();
-    window.scrollTo(0, 0);
   }
 
   handlePopup1(index: number) {

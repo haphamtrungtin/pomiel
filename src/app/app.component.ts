@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import Lenis from '@studio-freight/lenis';
 import { FooterComponent } from "./components/footer/footer.component";
@@ -19,14 +19,21 @@ export class AppComponent {
   progressWidth = '0%'; // Start at 0%
   currentProgress = 0; // Current progress in percentage
 
+  private readonly router = inject(Router);
   ngOnInit(): void {
-    // this.animateProgress();
+    this.animateProgress();
 
-    // setInterval(() => {
+    setInterval(() => {
 
-    //   this.isLoading = false
+      this.isLoading = false
 
-    // }, 2200)
+    }, 2200)
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+  });
   }
 
   animateProgress() {
