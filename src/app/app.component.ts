@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'pomiel';
   private lenis: Lenis;
-  isLoading = false;
+  isLoading = true;
   progressWidth = '0%'; // Start at 0%
   currentProgress = 0; // Current progress in percentage
 
@@ -23,15 +23,14 @@ export class AppComponent {
   ngOnInit(): void {
     this.animateProgress();
 
-    setInterval(() => {
-
+    setTimeout(() => {
       this.isLoading = false
-
     }, 2200)
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+
       }
   });
   }
