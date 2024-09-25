@@ -59,7 +59,7 @@
       <div class="flex flex-col items-center gap-10 lg:flex-row">
         <img src="/logo1.png" alt="logo" class="w-[200px] invert h-[200px] object-cover">
 
-        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="flex-1 w-full p-8 bg-white rounded-xl">
+        <form *ngIf="!isSend; else notiRef" (ngSubmit)="onSubmit()" #contactForm="ngForm" class="flex-1 w-full p-8 bg-white rounded-xl">
           <div class="mb-4">
             <label for="email" class="block font-medium text-gray-700">Email:</label>
 
@@ -91,6 +91,13 @@
             Submit
           </button>
         </form>
+
+        <ng-template #notiRef>
+          <div class="flex-1 w-full p-8 bg-white rounded-xl">
+            <span class="text-xl font-medium text-gray-700">{{notification}}
+            </span>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>
